@@ -4,7 +4,7 @@ import Video from "./video";
 class Field extends Component {
   render() {
     return (
-      <div>
+      <div className="field">
         <Video />
       </div>
     );

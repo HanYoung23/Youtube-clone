@@ -1,0 +1,80 @@
+:root {
+  /* Color */
+  --color-black: black;
+  --color-white: beige;
+  --color-red: red;
+  /* Font size */
+  --font-size-nav: 1.5em;
+  /* Font weight */
+  --font-bolder: bolder;
+  /* Padding */
+  --padding-nav: 0.4em;
+  /* Margin */
+  --margin-nav: 0.4em;
+  /* Width */
+  --width-nav-screen: 60em;
+  --width-nav-search: 1.2em;
+  --width-nav-button: 2.4em;
+  --width-nav-title: 5em;
+  /* Height */
+  --height-nav-button: 2.4em;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.screen {
+  margin: 0 auto;
+  width: var(width-nav-screen);
+}
+
+/* Navbar */
+
+.navBar {
+  background: var(--color-black);
+  padding: var(--margin-nav) 0;
+  display: flex;
+  align-items: center;
+  line-height: 100%;
+}
+
+.navBar .youtube {
+  font-size: var(--font-size-nav);
+  color: var(--color-red);
+  margin: 0 var(--padding-nav);
+}
+
+.navBar .navTitle {
+  font-size: calc(var(--nav-font-size) / 1.4);
+  font-weight: var(--font-bolder);
+  color: var(--color-white);
+  width: var(--width-nav-title);
+}
+
+.navBar .searchBar {
+  margin: 0 calc(var(--nav-margin) * 4);
+  display: flex;
+  width: 100%;
+}
+
+.navBar .searchBar .inputText {
+  width: 100%;
+}
+
+.navBar .searchBar .inputBtn {
+  width: var(--width-nav-button);
+  height: var(--height-nav-button);
+}
+
+/* Field */
+.field {
+  background-color: var(--color-black);
+}
+
+/* Video */
+.video {
+  background-color: var(--color-black);
+}
