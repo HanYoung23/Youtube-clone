@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch, faTv } from "@fortawesome/free-solid-svg-icons";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faYoutube } from "@fortawesome/free-brands-svg-icons";
 
 class Navbar extends Component {
@@ -13,7 +13,7 @@ class Navbar extends Component {
           <input
             className="inputText"
             type="text"
-            placeholder="Search.."
+            placeholder="  Search.."
           ></input>
           <button className="inputBtn">
             <FontAwesomeIcon icon={faSearch} />

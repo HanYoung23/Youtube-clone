@@ -1,23 +1,23 @@
 :root {
   /* Color */
   --color-black: black;
-  --color-white: beige;
+  --color-grey: grey;
+  --color-white: white;
   --color-red: red;
   /* Font size */
   --font-size-nav: 1.5em;
   /* Font weight */
   --font-bolder: bolder;
   /* Padding */
-  --padding-nav: 0.4em;
+  --padding-nav: 12px;
   /* Margin */
-  --margin-nav: 0.4em;
+  --margin-nav: 12px;
   /* Width */
-  --width-nav-screen: 60em;
-  --width-nav-search: 1.2em;
-  --width-nav-button: 2.4em;
-  --width-nav-title: 5em;
+  --width-nav-screen: 800px;
+  --width-nav-button: 36px;
+  --width-nav-title: 100px;
   /* Height */
-  --height-nav-button: 2.4em;
+  --height-nav-button: 36px;
 }
 
 * {
@@ -26,16 +26,20 @@
   padding: 0;
 }
 
+ul {
+  list-style: none;
+}
+
 .screen {
   margin: 0 auto;
-  width: var(width-nav-screen);
+  width: var(--width-nav-screen);
 }
 
 /* Navbar */
 
 .navBar {
-  background: var(--color-black);
-  padding: var(--margin-nav) 0;
+  background-color: var(--color-black);
+  padding: var(--padding-nav);
   display: flex;
   align-items: center;
   line-height: 100%;
@@ -44,7 +48,6 @@
 .navBar .youtube {
   font-size: var(--font-size-nav);
   color: var(--color-red);
-  margin: 0 var(--padding-nav);
 }
 
 .navBar .navTitle {
@@ -52,10 +55,10 @@
   font-weight: var(--font-bolder);
   color: var(--color-white);
   width: var(--width-nav-title);
+  padding-left: calc(var(--padding-nav) / 2);
 }
 
 .navBar .searchBar {
-  margin: 0 calc(var(--nav-margin) * 4);
   display: flex;
   width: 100%;
 }
@@ -71,10 +74,12 @@
 
 /* Field */
 .field {
-  background-color: var(--color-black);
+  background-color: var(--color-grey);
+  width: 100%;
+  height: 40em;
 }
 
 /* Video */
 .video {
-  background-color: var(--color-black);
+  background-color: var(--color-grey);
 }
