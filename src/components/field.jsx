@@ -5,10 +5,11 @@ class Field extends Component {
   render() {
     return (
       <div className="field">
-        <ul className="videoList">
-          <li className="videos"></li>
-        </ul>
-        <Video />
+        <Video
+          videoNum={this.props.videoNum}
+          videos={this.props.videos}
+          createVideos={this.createVideos}
+        />
       </div>
     );
   }
