@@ -27,8 +27,10 @@
   outline: none;
 }
 
-.app {
+body {
   background: ivory;
+  width: 100%;
+  height: 100%;
 }
 
 /* Navbar */
@@ -45,7 +47,7 @@
 
 .navBar .youtubeIcon {
   font-size: var(--font-size-nav);
-  color: var(--color-);
+  color: var(--color-red);
   margin-right: 0.4em;
 }
 
@@ -61,6 +63,10 @@
   align-items: center;
 }
 
+.navBar .navTitle:hover {
+  list-style: none;
+}
+
 .navBar .searchBar {
   display: flex;
   width: calc(var(--width-nav-screen) * 0.82);
@@ -72,6 +78,11 @@
 
 .navBar .searchBar .inputBtn {
   padding: var(--padding-button);
+  outline: none;
+}
+
+button:active {
+  color: red;
 }
 
 /* Field */

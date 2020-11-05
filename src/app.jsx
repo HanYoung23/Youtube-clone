@@ -22,12 +22,12 @@ class App extends Component {
         return res.json();
       })
       .then((json) => {
-        console.log(json);
         this.setState({
           isLoaded: true,
           items: json,
         });
       });
+    console.log(this.state.fetch);
   }
 
   render() {
@@ -38,7 +38,12 @@ class App extends Component {
     } else {
       return (
         <div className="app">
-          <Navbar />
+          <Navbar
+            fetch={(fetchUrl) => {
+              this.setState({ fetch: fetchUrl });
+              console.log(this.state.fetch);
+            }}
+          />
           <Field items={items} />
         </div>
       );
