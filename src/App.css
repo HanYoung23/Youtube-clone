@@ -10,29 +10,25 @@
   --font-bolder: bolder;
   /* Padding */
   --padding-nav: 12px;
+  --padding-button: 8px;
   /* Margin */
   --margin-nav: 12px;
   /* Width */
   --width-nav-screen: 800px;
-  --width-nav-button: 36px;
   --width-nav-title: 100px;
   /* Height */
-  --height-nav-button: 36px;
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-ul {
   list-style: none;
+  outline: none;
 }
 
-.screen {
-  margin: 0 auto;
-  width: var(--width-nav-screen);
+.app {
+  background: ivory;
 }
 
 /* Navbar */
@@ -43,40 +39,48 @@ ul {
   display: flex;
   align-items: center;
   line-height: 100%;
+  width: var(--width-nav-screen);
+  margin: 0 auto;
 }
 
-.navBar .youtube {
+.navBar .youtubeIcon {
   font-size: var(--font-size-nav);
-  color: var(--color-red);
+  color: var(--color-);
+  margin-right: 0.4em;
 }
 
 .navBar .navTitle {
+  width: calc(var(--width-nav-screen) * 0.14);
   font-size: calc(var(--nav-font-size) / 1.4);
   font-weight: var(--font-bolder);
   color: var(--color-white);
-  width: var(--width-nav-title);
-  padding-left: calc(var(--padding-nav) / 2);
+  text-align: start;
+  margin-right: 0.4em;
+  line-height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .navBar .searchBar {
   display: flex;
-  width: 100%;
+  width: calc(var(--width-nav-screen) * 0.82);
 }
 
 .navBar .searchBar .inputText {
-  width: 100%;
+  width: var(--width-nav-screen);
 }
 
 .navBar .searchBar .inputBtn {
-  width: var(--width-nav-button);
-  height: var(--height-nav-button);
+  padding: var(--padding-button);
 }
 
 /* Field */
 .field {
+  margin: 0 auto;
+  padding-top: 4px;
   background-color: var(--color-grey);
-  width: 100%;
-  height: 40em;
+  width: var(--width-nav-screen);
+  height: fit-content;
 }
 
 /* Video */

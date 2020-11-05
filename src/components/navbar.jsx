@@ -1,14 +1,15 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { faYoutube } from "@fortawesome/free-brands-svg-icons";
+import { faMousePointer, faSearch } from "@fortawesome/free-solid-svg-icons";
 
 class Navbar extends Component {
   render() {
     return (
       <div className="navBar">
-        <FontAwesomeIcon icon={faYoutube} className="youtube" />
-        <span className="navTitle">한영튜브</span>
+        <a href="/" className="navTitle">
+          <FontAwesomeIcon icon={faMousePointer} className="youtubeIcon" />
+          Metube
+        </a>
         <form className="searchBar">
           <input
             className="inputText"
