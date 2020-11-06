@@ -7,12 +7,15 @@ class Field extends Component {
     return (
       <div className="field">
         {items.map((item) => (
-          <li key={item.id}>
-            <div>
-              <img src={item.snippet.thumbnails.standard.url} alt="thumb" />
-            </div>
+          <li key={item.id.videoId}>
+            <img
+              src={item.snippet.thumbnails.medium.url}
+              alt="thumb"
+              width="300"
+              height="200"
+            />
             <div>{item.snippet.title}</div>
-            <div>{item.snippet.description}</div>
+            <div>{item.snippet.channelTitle}</div>
           </li>
         ))}
         <Video items={this.props.items} />

@@ -4,13 +4,13 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faYoutube } from "@fortawesome/free-brands-svg-icons";
 
 class Navbar extends Component {
-  sendFetch = () => {
-    let fetch = document.querySelector("input").value;
-    if (fetch !== "") {
-      this.props.fetch(fetch);
+  sendSearchValue() {
+    let search = document.querySelector("input").value;
+    if (search !== "") {
+      this.props.url(search);
       document.querySelector("input").value = "";
     }
-  };
+  }
 
   preventDefault = (e) => {
     e.preventDefault();
@@ -21,7 +21,7 @@ class Navbar extends Component {
       console.log(key);
       return;
     } else if (key.keyCode === 13) {
-      this.sendFetch();
+      this.sendSearchValue();
     }
   };
 
@@ -50,7 +50,7 @@ class Navbar extends Component {
             <FontAwesomeIcon
               icon={faSearch}
               onClick={(e) => {
-                this.sendFetch();
+                this.sendSearchValue();
                 this.preventDefault(e);
               }}
             />

@@ -9,46 +9,51 @@ class App extends Component {
     super(props);
     this.state = {
       items: [],
+      isLoad: false,
       fetch: "",
-      isLoaded: false,
-    };
-    this.url = {
-      initUrl:
-        "https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&",
+      q: "",
       maxResults: 2,
-      key: "AIzaSyDLA3UXgwKGQme2hQFAKbHrZlfsRtha0m4",
     };
   }
 
-  //https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=2&key=AIzaSyDLA3UXgwKGQme2hQFAKbHrZlfsRtha0m4
+  //https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=4&q=bts&key=AIzaSyDLA3UXgwKGQme2hQFAKbHrZlfsRtha0m4
 
-  createFetchUrl() {}
-  componentDidMount() {
-    fetch(this.state.fetch)
+  setFetch() {
+    const { q, maxResults } = this.state;
+    const url = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=${maxResults}&q=${q}&key=AIzaSyDLA3UXgwKGQme2hQFAKbHrZlfsRtha0m4`;
+    fetch(url)
       .then((res) => {
         return res.json();
       })
       .then((json) => {
         console.log(json.items);
         this.setState({
-          isLoaded: true,
           items: json.items,
+          isLoad: true,
         });
       });
   }
 
   render() {
-    var { isLoaded, items } = this.state;
-
-    if (!isLoaded) {
-      return <div>Loading...</div>;
-    } else {
-      return (
-        <div className="app">
-          <Navbar />
-          <Field items={items} />
-        </div>
-      );
+    {
+      if (this.state.isLoad === false) {
+        this.setFetch();
+      }
+      if (this.state.isLoad === true) {
+        return (
+          <div className="app">
+            <Navbar
+              url={(search) => {
+                console.log(search);
+                this.setState({ q: search });
+                this.setState(this.state);
+                console.log(this.state.fetch);
+              }}
+            />
+            <Field items={this.state.items} />
+          </div>
+        );
+      }
     }
   }
 }
