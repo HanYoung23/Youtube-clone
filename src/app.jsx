@@ -9,25 +9,32 @@ class App extends Component {
     super(props);
     this.state = {
       items: [],
+      fetch: "",
       isLoaded: false,
-      fetch: "https://jsonplaceholder.typicode.com/todos/1",
+    };
+    this.url = {
+      initUrl:
+        "https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&",
+      maxResults: 2,
+      key: "AIzaSyDLA3UXgwKGQme2hQFAKbHrZlfsRtha0m4",
     };
   }
 
-  //fetch 결과 수정하기
+  //https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=2&key=AIzaSyDLA3UXgwKGQme2hQFAKbHrZlfsRtha0m4
 
+  createFetchUrl() {}
   componentDidMount() {
     fetch(this.state.fetch)
       .then((res) => {
         return res.json();
       })
       .then((json) => {
+        console.log(json.items);
         this.setState({
           isLoaded: true,
-          items: json,
+          items: json.items,
         });
       });
-    console.log(this.state.fetch);
   }
 
   render() {
@@ -38,12 +45,7 @@ class App extends Component {
     } else {
       return (
         <div className="app">
-          <Navbar
-            fetch={(fetchUrl) => {
-              this.setState({ fetch: fetchUrl });
-              console.log(this.state.fetch);
-            }}
-          />
+          <Navbar />
           <Field items={items} />
         </div>
       );

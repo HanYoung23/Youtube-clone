@@ -6,14 +6,15 @@ class Field extends Component {
     const items = this.props.items;
     return (
       <div className="field">
-        {/* {items.map((item) => ( */}
-        <li key={items.id}>
-          <div>
-            <img src="favicon.png" alt="thumb" />
-          </div>
-          <div>{items.title}</div>
-          <div>{items.title}</div>
-        </li>
+        {items.map((item) => (
+          <li key={item.id}>
+            <div>
+              <img src={item.snippet.thumbnails.standard.url} alt="thumb" />
+            </div>
+            <div>{item.snippet.title}</div>
+            <div>{item.snippet.description}</div>
+          </li>
+        ))}
         <Video items={this.props.items} />
       </div>
     );
