@@ -1,26 +1,39 @@
 import React, { Component } from "react";
-import Video from "./video";
 
 class Field extends Component {
+  createVideo = (videoId) => {
+    const link = `https://www.youtube.com/embed/${videoId}`;
+    this.props.changeStatus(link);
+  };
+
   render() {
     const items = this.props.items;
-    return (
-      <div className="field">
-        {items.map((item) => (
-          <li key={item.id.videoId}>
-            <img
-              src={item.snippet.thumbnails.medium.url}
-              alt="thumb"
-              width="300"
-              height="200"
-            />
-            <div>{item.snippet.title}</div>
-            <div>{item.snippet.channelTitle}</div>
-          </li>
-        ))}
-        <Video items={this.props.items} />
-      </div>
-    );
+    {
+      return (
+        <ul className="field">
+          {items.map((item) => (
+            <li key={item.id.videoId} className="itemList">
+              <button
+                className="itemCard"
+                onClick={() => {
+                  this.createVideo(item.id.videoId);
+                }}
+              >
+                <img
+                  className="itemImg"
+                  src={item.snippet.thumbnails.medium.url}
+                  alt="thumb"
+                  width="300"
+                  height="200"
+                />
+                <div className="itemTitle">{item.snippet.title}</div>
+                <div className="channelTitle">{item.snippet.channelTitle}</div>
+              </button>
+            </li>
+          ))}
+        </ul>
+      );
+    }
   }
 }
 

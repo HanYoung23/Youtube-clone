@@ -1,13 +1,17 @@
 import React, { Component } from "react";
 
 class Video extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
   render() {
-    return <ul className="videoList"></ul>;
+    return (
+      <iframe
+        id="player"
+        width="640"
+        height="360"
+        src={this.props.status}
+        frameBorder="0"
+        allowFullScreen
+      />
+    );
   }
 }
 
