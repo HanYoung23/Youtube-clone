@@ -3,7 +3,7 @@
 ### 유튜브 API를 이용한 홈페이지입니다. (프로젝트 기간 - 7일)
 #HTML #CSS #Javascript #React
 
-플레이하기 -> https://hanyoung23.github.io/Sliding-Puzzle/
+플레이하기 -> https://hanyoung23.github.io/YoutubeAPI/
 
 #### 기능()
 - Shuffle => 랜덤으로 각 퍼즐에 좌표부여 (Math.floor/ Math.random())
