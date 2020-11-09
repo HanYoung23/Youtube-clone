@@ -17,13 +17,11 @@ class App extends Component {
     };
   }
 
-  //https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=2&key=AIzaSyDLA3UXgwKGQme2hQFAKbHrZlfsRtha0m4
-
   componentDidMount = (inputValue) => {
     const max = this.state.maxResults;
     const q = inputValue;
     fetch(
-      `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=${max}&q=${q}&key=AIzaSyDLA3UXgwKGQme2hQFAKbHrZlfsRtha0m4`
+      `https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=${max}&q=${q}&key=AIzaSyDLA3UXgwKGQme2hQFAKbHrZlfsRtha0m4`
     )
       .then((res) => {
         return res.json();

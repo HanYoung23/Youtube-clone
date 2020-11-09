@@ -141,7 +141,13 @@ button:active {
   height: 440px;
 }
 
+.videoField .videoTitle {
+  color: white;
+  margin: 4px 0 20px 0;
+}
+
 .videoField .videoDesc {
   color: white;
   margin: 4px 0 20px 0;
+  text-align: start;
 }

@@ -5,13 +5,15 @@ class Video extends Component {
     return (
       <div className="videoField">
         <iframe
+          title={this.props.status}
           className="video"
           id="player"
           src={this.props.status}
           frameBorder="0"
           allowFullScreen
         />
-        <div className="videoDesc">{this.props.videoDesc}</div>
+        <div className="videoTitle">{this.props.videoDesc.title}</div>
+        <div className="videoDesc">{this.props.videoDesc.description}</div>
       </div>
     );
   }
