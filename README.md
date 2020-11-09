@@ -6,11 +6,10 @@
 플레이하기 -> https://hanyoung23.github.io/YoutubeAPI/
 
 #### 기능()
-- Shuffle => 랜덤으로 각 퍼즐에 좌표부여 (Math.floor/ Math.random())
-- Undo => 배열로 동작 히스토리 관리 (array.slice()/ array.pop()/ array.push())
-- 3x3/4x4/5x5 => 각 퍼즐 개수에 따라 이미지 조정 (parseInt(event.target.id.charAt(0))/)
-- Time => 게임 상황에 따라 타이머 동작/멈추기 (setInterval()/ clearInterval()/ Math.floor)
-- PopUp => 게임 종료 시 배너 & 리플레이 버튼 구현 (popUp.style.visibility/ popUpMessage.innerHTML)
-- Buttons => 버튼들의 이벤트 부여/제거 (addEventListener()/ removeEventListener())
+- Youtube API 이용 (fetch())
+- React lifecycle을 고려하여 componentDidMount()사용
+- json데이터에서 array.map()을 이용하여 원하는 데이터만 사용
+- iframe태그를 이용하여 동영상 구현
 
 #### 플레이 이미지.gif
+![youtubeAPI](https://user-images.githubusercontent.com/67942048/98507983-004c9f80-22a2-11eb-8353-6bcae94e91a3.png)
