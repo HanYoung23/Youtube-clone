@@ -28,8 +28,13 @@ class Navbar extends Component {
     return (
       <div className="navBar">
         <span href="#" className="navTitle">
-          <FontAwesomeIcon icon={faYoutube} className="youtubeIcon" />
-          Metube
+          <img
+            src="youtubeLogo.png"
+            alt="youtubeLogo"
+            className="youtubeIcon"
+            width="40"
+          />
+          Hantube
         </span>
         <form
           className="searchBar"

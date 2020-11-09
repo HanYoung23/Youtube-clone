@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 
 class Field extends Component {
-  createVideo = (videoId) => {
+  createVideo = (item) => {
+    const videoId = item.id.videoId;
     const link = `https://www.youtube.com/embed/${videoId}`;
-    this.props.changeStatus(link);
+    const videoDesc = item.snippet.description;
+    this.props.changeStatus(link, videoDesc);
   };
 
   render() {
@@ -16,18 +18,17 @@ class Field extends Component {
               <button
                 className="itemCard"
                 onClick={() => {
-                  this.createVideo(item.id.videoId);
+                  this.createVideo(item);
                 }}
               >
                 <img
                   className="itemImg"
                   src={item.snippet.thumbnails.medium.url}
+                  width="400"
                   alt="thumb"
-                  width="300"
-                  height="200"
                 />
-                <div className="itemTitle">{item.snippet.title}</div>
                 <div className="channelTitle">{item.snippet.channelTitle}</div>
+                <div className="itemTitle">{item.snippet.title}</div>
               </button>
             </li>
           ))}

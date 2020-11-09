@@ -28,7 +28,7 @@
 }
 
 body {
-  background: var(--color-white);
+  background: var(--color-black);
   width: 100%;
   height: 100%;
 }
@@ -48,7 +48,7 @@ body {
 .navBar .youtubeIcon {
   font-size: var(--font-size-nav);
   color: var(--color-red);
-  margin-right: 0.4em;
+  margin-right: 0.2em;
 }
 
 .navBar .navTitle {
@@ -88,18 +88,60 @@ button:active {
 /* Field */
 .field {
   margin: 0 auto;
-  padding-top: 4px;
-  background-color: var(--color-grey);
+  background-color: var(--color-black);
   width: var(--width-nav-screen);
   height: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2px;
 }
 
 .field .itemList {
-  display: flex;
-  flex-wrap: nowrap;
+  width: 50%;
+  padding: 2px;
+  height: 280px;
+}
+
+.field .itemCard {
+  width: 100%;
+  border: none;
+}
+
+.field .itemCard:hover {
+  transform: scale(1.02);
+  transition: 200ms ease-in;
+}
+
+.field .itemImg {
+  width: 100%;
+  height: 220px;
+}
+
+.field .channelTitle {
+  font-weight: bold;
+}
+
+.field .itemTitle {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 /* Video */
-.video {
-  background-color: var(--color-grey);
+.videoField {
+  background-color: var(--color-black);
+  padding: 8px 0 4px 0;
+  margin: 0 auto;
+  width: var(--width-nav-screen);
+  text-align: center;
+}
+
+.videoField .video {
+  width: 100%;
+  height: 440px;
+}
+
+.videoField .videoDesc {
+  color: white;
+  margin: 4px 0 20px 0;
 }

@@ -11,8 +11,9 @@ class App extends Component {
     this.state = {
       items: [],
       isLoad: false,
-      maxResults: 5,
+      maxResults: 10,
       status: "",
+      videoDesc: "",
     };
   }
 
@@ -48,12 +49,17 @@ class App extends Component {
               }}
             />
 
-            {this.state.status !== "" && <Video status={this.state.status} />}
+            {this.state.status !== "" && (
+              <Video
+                status={this.state.status}
+                videoDesc={this.state.videoDesc}
+              />
+            )}
             <Field
               items={this.state.items}
               status={this.state.status}
-              changeStatus={(status) => {
-                this.setState({ status: status });
+              changeStatus={(link, videoDesc) => {
+                this.setState({ status: link, videoDesc });
               }}
             />
           </div>
