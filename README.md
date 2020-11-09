@@ -12,4 +12,4 @@
 - iframe태그를 이용하여 동영상 구현
 
 #### 플레이 이미지.gif
-![youtubeAPI](https://user-images.githubusercontent.com/67942048/98507983-004c9f80-22a2-11eb-8353-6bcae94e91a3.png)
+![youtubeAPI](https://user-images.githubusercontent.com/67942048/98508436-d34cbc80-22a2-11eb-9977-5099ad886875.png)
