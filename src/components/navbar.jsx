@@ -28,7 +28,7 @@ class Navbar extends Component {
       <div className="navBar">
         <span href="#" className="navTitle">
           <img
-            src={"youtubeLogo.png"}
+            src="youtubeLogo.png"
             alt="logo"
             className="youtubeIcon"
             width="40"
