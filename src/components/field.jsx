@@ -2,7 +2,6 @@ import React, { Component } from "react";
 
 class Field extends Component {
   createVideo = (item) => {
-    console.log(item);
     const videoId = item.id;
     const link = `https://www.youtube.com/embed/${videoId}`;
     const videoDesc = item.snippet;

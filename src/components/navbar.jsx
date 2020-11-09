@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { faYoutube } from "@fortawesome/free-brands-svg-icons";
 
 class Navbar extends Component {
   sendInputValue() {
@@ -28,11 +27,7 @@ class Navbar extends Component {
     return (
       <div className="navBar">
         <span href="#" className="navTitle">
-          <FontAwesomeIcon
-            icon={faYoutube}
-            className="youtubeIcon"
-            width="40"
-          />
+          <img src={require("./youtubeLogo.png")} alt="logo" className="youtubeIcon" width="40" />
           Hantube
         </span>
         <form
