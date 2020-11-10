@@ -47,6 +47,7 @@ class App extends Component {
             <Navbar
               url={(inputValue) => {
                 this.componentDidMount(inputValue);
+                this.setState({ status: "" });
               }}
             />
 
