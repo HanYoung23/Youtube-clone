@@ -2,9 +2,9 @@ import React, { Component } from "react";
 
 class Field extends Component {
   createVideo = (item) => {
-    const videoId = item.id;
+    const videoId = item.id.videoId;
     const link = `https://www.youtube.com/embed/${videoId}`;
-    const videoDesc = item.snippet;
+    const videoDesc = item.snippet.description;
     this.props.changeStatus(link, videoDesc);
   };
 
@@ -14,7 +14,7 @@ class Field extends Component {
       return (
         <ul className="field">
           {items.map((item) => (
-            <li key={item.id} className="itemList">
+            <li key={item.etag} className="itemList">
               <button
                 className="itemCard"
                 onClick={() => {

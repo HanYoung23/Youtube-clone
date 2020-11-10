@@ -19,9 +19,12 @@ class App extends Component {
 
   componentDidMount = (inputValue) => {
     const max = this.state.maxResults;
-    const q = inputValue;
+    let q = inputValue;
+    if (inputValue === undefined) {
+      q = "popular videos";
+    }
     fetch(
-      `https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=${max}&q=${q}&key=AIzaSyDLA3UXgwKGQme2hQFAKbHrZlfsRtha0m4`
+      `https://youtube.googleapis.com/youtube/v3/search?part=snippet&chart=mostPopular&maxResults=${max}&q=${q}&key=AIzaSyDLA3UXgwKGQme2hQFAKbHrZlfsRtha0m4`
     )
       .then((res) => {
         return res.json();

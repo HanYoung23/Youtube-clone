@@ -27,7 +27,12 @@ class Navbar extends Component {
     return (
       <div className="navBar">
         <span href="#" className="navTitle">
-          <img src={require("./youtubeLogo.png")} alt="logo" className="youtubeIcon" width="40" />
+          <img
+            src={require("./youtubeLogo.png")}
+            alt="logo"
+            className="youtubeIcon"
+            width="40"
+          />
           Hantube
         </span>
         <form
@@ -47,9 +52,8 @@ class Navbar extends Component {
           <button className="inputBtn">
             <FontAwesomeIcon
               icon={faSearch}
-              onClick={(e) => {
+              onClick={() => {
                 this.sendInputValue();
-                this.preventDefault(e);
               }}
             />
           </button>
