@@ -21,6 +21,13 @@ function App({ youtube }) {
       });
   };
 
+  const showFirstScreen = () => {
+    setSelectedVideo("");
+    youtube
+      .mostPopular() //
+      .then((videos) => setVideos(videos));
+  };
+
   useEffect(() => {
     youtube
       .mostPopular() //
@@ -29,17 +36,9 @@ function App({ youtube }) {
 
   return (
     <div className={styles.app}>
-      <SearchHeader onSearch={search} />
-      <section className={styles.content}>
-        {selectedVideo !== "" && (
-          <div className={styles.detail}>
-            <VideoDetail video={selectedVideo} />
-          </div>
-        )}
-        <div className={styles.list}>
-          <VideoList videos={videos} onVideoClick={selectVideo} />
-        </div>
-      </section>
+      <SearchHeader onSearch={search} onLogoClick={showFirstScreen} />
+      {selectedVideo !== "" && <VideoDetail video={selectedVideo} />}
+      <VideoList videos={videos} onVideoClick={selectVideo} />
     </div>
   );
 }

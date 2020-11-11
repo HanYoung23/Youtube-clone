@@ -5,16 +5,14 @@ const VideoDetail = ({ video }) => {
   return (
     <section className={styles.detail}>
       <iframe
+        title={video.id}
         className={styles.video}
         type="text/html"
-        width="800"
-        height="600"
         src={`http://www.youtube.com/embed/${video.id}`}
         frameBorder="0"
         allowFullScreen
       />
-      <h2>{video.snippet.title}</h2>
-      <h3>{video.snippet.channelTitle}</h3>
+      <h3>{video.snippet.title}</h3>
       <p>{video.snippet.description}</p>
     </section>
   );

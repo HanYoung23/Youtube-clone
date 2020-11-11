@@ -1,7 +1,7 @@
-import React, { useRef } from "react";
+import React, { memo, useRef } from "react";
 import styles from "./search_header.module.css";
 
-const SearchHeader = ({ onSearch }) => {
+const SearchHeader = memo(({ onLogoClick, onSearch }) => {
   const inputRef = useRef();
   const onKeyPress = (event) => {
     let value = inputRef.current.value;
@@ -10,16 +10,17 @@ const SearchHeader = ({ onSearch }) => {
       inputRef.current.value = "";
     }
   };
+
   return (
     <header className={styles.header}>
-      <div className={styles.logo}>
+      <button href="#" className={styles.logo} onClick={onLogoClick}>
         <img
           className={styles.logoImg}
           src={require("./youtubeLogo.png")}
           alt="youtube"
         />
-        <h1 className={styles.title}>Hantube</h1>
-      </div>
+        <h2 className={styles.title}>Hantube</h2>
+      </button>
       <input
         ref={inputRef}
         className={styles.input}
@@ -29,6 +30,6 @@ const SearchHeader = ({ onSearch }) => {
       />
     </header>
   );
-};
+});
 
 export default SearchHeader;
